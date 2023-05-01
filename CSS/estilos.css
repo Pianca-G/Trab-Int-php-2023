@@ -1,0 +1,5 @@
+.oscurecer{
+    filter: brightness(55%);}
+    .title {
+        font-size: calc(1.525rem + 0.3vw);
+      }
