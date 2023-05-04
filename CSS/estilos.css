@@ -1,8 +1,11 @@
+/*Reset*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .oscurecer{
     filter: brightness(55%);}
     .title {
         font-size: calc(1.525rem + 0.3vw);
       }
-.miContenedor{  
-  width: 75%;
-}
