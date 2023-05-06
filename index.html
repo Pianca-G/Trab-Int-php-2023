@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
 
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="CSS/bootstrap.min.css">
@@ -13,11 +14,11 @@
 
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#barra_superior" >
-   
+<body data-bs-spy="scroll" data-bs-target="#barra_superior">
+
   <header>
     <!-- Barra de navegación-->
-    <nav id="barra_superior" class="navbar navbar-expand-lg bg-dark fixed-top " data-bs-theme="dark"> 
+    <nav id="barra_superior" class="navbar navbar-expand-lg bg-dark fixed-top " data-bs-theme="dark">
       <div class="container-fluid ">
         <img src="Imagenes/codoacodo.png" alt="Logo" width="80" height="45" class=" ">
         <a class="navbar-brand " href="#">Conf Bs As</a>
@@ -34,22 +35,49 @@
               <a class="nav-link " href="#oradores">Los Oradores</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#lugar" >El Lugar y la fecha</a>
+              <a class="nav-link " href="#lugar">El Lugar y la fecha</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#invitacion_orador" >Conviérte en Orador</a>
+              <a class="nav-link " href="#invitacion_orador">Conviérte en Orador</a>
             </li>
             <li class="nav-item">
-              <button class="btn btn-outline-success" type="submit">Comprar Tickets</button>
+              <!-- <button class="btn btn-outline-success" type="submit">Comprar Tickets</button> -->
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                data-bs-target="#error_venta_ticket">
+                Comprar tickets
+              </button>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    
+    <!-- Modal -->
+    <div class="modal fade" id="error_venta_ticket" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-dark p-2 text-white bg-opacity-75">
+            <h1 class="modal-title fs-5 " id="exampleModalLabel">Venta de Tickets Postergado</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body bg-dark p-2 text-white bg-opacity-75">
+
+            <p>Nuestro departamento de venta se encuentra tomando mates todavía.
+              A la brevedad solucionaremos el inconveniente cuando se termine el agua e informaremos masivamente.</p>
+            <p> Gracias</p>
+          </div>
+          <div class="modal-footer bg-dark p-2 text-white bg-opacity-75">
+            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cerrar Aviso</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
     <!--Carousel-->
     <section id="presentacion">
-      <div id="carouselExampleCaptions" class="carousel slide mt-5"> <!--le doy un mt-5 para que no se meta atras del navbar-->
+      <div id="carouselExampleCaptions" class="carousel slide mt-5">
+        <!--le doy un mt-5 para que no se meta atras del navbar-->
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
             aria-current="true" aria-label="Slide 1"></button>
@@ -64,7 +92,8 @@
             <div class="carousel-caption text-end ">
               <h2 class="  ">Conf Bs As</h2>
               <div class="col-lg-7 d-flex flex-wrap ms-auto">
-                <p class="d-none d-sm-none d-md-block d-l-block">Bs As llega por primera vez a Argentina un evento para compartir con
+                <p class="d-none d-sm-none d-md-block d-l-block">Bs As llega por primera vez a Argentina un evento para
+                  compartir con
                   nuestra comunidad el
                   conocimiento y experiencia
                   de los expertos que están creando el futuro de internet Ven a conocer a mienbros del evento,
@@ -73,7 +102,9 @@
                 <div class="row col ms-auto ">
                   <a class=" col m-1 btn btn-outline-light btn-sm " href="#invitacion_orador">Quiero Ser
                     Orador</a>
-                  <a class=" col m-1 btn btn-success btn-sm" href="#">Comprar Tickets</a>
+                  <!-- <a class=" col m-1 btn btn-success btn-sm" href="#error_venta_ticket">Comprar Tickets</a> -->
+                  <a class="col m-1 btn btn-success btn-sm" data-bs-toggle="modal"
+                    data-bs-target="#error_venta_ticket">Comprar Tickets</a>
                 </div>
               </div>
             </div>
@@ -83,7 +114,8 @@
             <div class="carousel-caption text-end ">
               <h2 class="">Conf Bs As</h2>
               <div class="col-lg-7 d-flex flex-wrap ms-auto">
-                <p class="d-none d-sm-none d-md-block d-l-block">Bs As llega por primera vez a Argentina un evento para compartir con
+                <p class="d-none d-sm-none d-md-block d-l-block">Bs As llega por primera vez a Argentina un evento para
+                  compartir con
                   nuestra comunidad el
                   conocimiento y experiencia
                   de los expertos que están creando el futuro de internet Ven a conocer a mienbros del evento,
@@ -92,7 +124,9 @@
                 <div class="row col ms-auto ">
                   <a class=" col m-1 btn btn-outline-light btn-sm " href="#invitacion_orador">Quiero Ser
                     Orador</a>
-                  <a class=" col m-1 btn btn-success btn-sm" href="#">Comprar Tickets</a>
+                  <!-- <a class=" col m-1 btn btn-success btn-sm" href="#error_venta_ticket">Comprar Tickets</a> -->
+                  <a class="col m-1 btn btn-success btn-sm" data-bs-toggle="modal"
+                    data-bs-target="#error_venta_ticket">Comprar Tickets</a>
                 </div>
               </div>
             </div>
@@ -102,7 +136,8 @@
             <div class="carousel-caption text-end ">
               <h2 class="">Conf Bs As</h2>
               <div class="col-lg-7 d-flex flex-wrap ms-auto">
-                <p class="d-none d-sm-none d-md-block d-l-block">Bs As llega por primera vez a Argentina un evento para compartir con
+                <p class="d-none d-sm-none d-md-block d-l-block">Bs As llega por primera vez a Argentina un evento para
+                  compartir con
                   nuestra comunidad el
                   conocimiento y experiencia
                   de los expertos que están creando el futuro de internet Ven a conocer a mienbros del evento,
@@ -111,7 +146,9 @@
                 <div class="row col ms-auto ">
                   <a class=" col m-1 btn btn-outline-light btn-sm " href="#invitacion_orador">Quiero Ser
                     Orador</a>
-                  <a class=" col m-1 btn btn-success btn-sm" href="#">Comprar Tickets</a>
+                  <!-- <a class=" col m-1 btn btn-success btn-sm" href="#error_venta_ticket">Comprar Tickets</a> -->
+                  <a class="col m-1 btn btn-success btn-sm" data-bs-toggle="modal"
+                    data-bs-target="#error_venta_ticket">Comprar Tickets</a>
                 </div>
               </div>
             </div>
@@ -200,7 +237,7 @@
         </div>
       </div>
     </section>
-    <section id="invitacion_orador" >
+    <section id="invitacion_orador">
       <!-- Formulario-->
       <div class="text-center ">
         <h2 class="fs-5 pt-5">CONVIERTETE EN UN ORADOR</h2>
@@ -211,25 +248,26 @@
           hablar!</h5>
       </div>
       <!--=========================================================================================================-->
-      <div class="miContenedor mx-auto   ">
-
-        <div class=" row justify-content-center ">
-          <!--Nombre y Apellido-->
-          <div class=" col-md-4 col-lg-4">
-            <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
-          </div>
-          <div class=" col-md-4 col-lg-4">
-            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
-          </div>
-          <!--Comentarios-->
-          <div class=" col-sm-8 col-lg-8 mt-3">
-            <textarea class="form-control" placeholder="Cual es la temática de tu conferencia"
-              id="floatingTextarea"></textarea>
-            <label for="floatingTextarea">Recordá dejar un titulo para tu charla!</label>
-          </div>
-          <!--Boton-->
-          <div class="col-md-8 col-lg-8">
-            <button class="btn btn-success mb-3 mt-3 w-100" type="button">Button</button>
+      <div class="mx-auto   ">
+        <div class="container">
+          <div class=" row justify-content-center ">
+            <!--Nombre y Apellido-->
+            <div class=" col-md-4 ">
+              <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
+            </div>
+            <div class=" col-md-4 ">
+              <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+            </div>
+            <!--Comentarios-->
+            <div class=" col-sm-8  mt-3">
+              <textarea class="form-control" placeholder="Cual es la temática de tu conferencia"
+                id="floatingTextarea"></textarea>
+              <label for="floatingTextarea">Recordá dejar un titulo para tu charla!</label>
+            </div>
+            <!--Boton-->
+            <div class="col-md-8 ">
+              <button class="btn btn-success mb-3 mt-3 w-100" type="button">Enviar</button>
+            </div>
           </div>
         </div>
       </div>
@@ -237,55 +275,18 @@
   </main>
   <!--Footer-->
   <footer>
-    <!-- <nav class="navbar  bg-secondary bg-gradient  " data-bs-theme="dark"> 
-      <div class=" ">
-        <a class="navbar-brand ms-4" href="#"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-2  ">
-            <li class="nav-item col-2">
-              <a class="nav-link " aria-current="page" href="#">La Conferencia</a>
-            </li>
-            <li class="nav-item col-2">
-              <a class="nav-link" href="#">Preguntas frecuentes</a>
-            </li>
-            <li class="nav-item col-2">
-              <a class="nav-link">Contactanos</a>
-            </li>
-            <li class="nav-item col-2">
-              <a class="nav-link">Prensa</a>
-            </li>
-            <li class="nav-item col-2">
-              <a class="nav-link ">Conferencias</a>
-            </li>
-            <li class="nav-item col-2">
-              <a class="nav-link ">Términos y condiciones</a>
-            </li>
-            <li class="nav-item col-2">
-              <a class="nav-link ">Privacidad</a>
-            </li>
-            <li class="nav-item col-2">
-              <a class="nav-link ">Estudiantes</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>-->
     <div class="">
       <footer class=" bg-secondary bg-gradient">
-      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">La conferencia</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Preguntas frecuentes</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contactanos</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Prensa</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacidad</a></li>
-      </ul>
-      <!-- <p class="text-center text-muted">© 2023 Company, Inc</p> -->
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">La conferencia</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Preguntas frecuentes</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contactanos</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Prensa</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacidad</a></li>
+        </ul>
+        <p class="text-center text-muted">©GPiancat to Codo a Codo  </p>
       </footer>
-      </div>
+    </div>
   </footer>
   <script src="JS/bootstrap.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
