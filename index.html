@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
+
 
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="CSS/bootstrap.min.css">
@@ -41,10 +41,8 @@
               <a class="nav-link " href="#invitacion_orador">Conviérte en Orador</a>
             </li>
             <li class="nav-item">
-              <!-- <button class="btn btn-outline-success" type="submit">Comprar Tickets</button> -->
-              <!-- Button trigger modal -->
               <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
-                data-bs-target="#error_venta_ticket">
+                data-bs-target="#venta_tickets"> <!--error_venta_ticket">-->
                 Comprar tickets
               </button>
             </li>
@@ -52,29 +50,110 @@
         </div>
       </div>
     </nav>
-    <!-- Modal -->
-    <div class="modal fade" id="error_venta_ticket" tabindex="-1" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header bg-dark p-2 text-white bg-opacity-75">
-            <h1 class="modal-title fs-5 " id="exampleModalLabel">Venta de Tickets Postergado</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body bg-dark p-2 text-white bg-opacity-75">
 
-            <p>Nuestro departamento de venta se encuentra tomando mates todavía.
-              A la brevedad solucionaremos el inconveniente cuando se termine el agua e informaremos masivamente.</p>
-            <p> Gracias</p>
+    <!-- ================================Venta de tickets======================================================= -->
+    <!-- Modal -->
+    <div class="modal fade" id="venta_tickets" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1> -->
+            <div class="row container justify-content-center ms-0 py-0 ">
+              <div class=" row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                  <div class="card border-primary " data-aos="zoom-in-down" data-aos-anchor-placement="center-center">
+                    <!-- <img src="Imagenes/steve1.jpg" class="card-img-top  " alt="..."> -->
+                    <div class="card-body text-center ">
+                      <!-- <span class="badge text-bg-warning">JavaScript</span>
+                      <span class="badge text-bg-success">React</span> -->
+                      <h5 class="card-title">Estudiante</h5>
+                      <p class="card-text">Aplica descuento.</p>
+                      <h5 class="card-title">80%</h5>
+                      <p class="card-text">*Presentar documentacion.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card border-success " data-aos="zoom-in-down" data-aos-anchor-placement="center-center">
+                    <!-- <img src="Imagenes/bill1.jpg" class="card-img-top" alt="..."> -->
+                    <div class="card-body text-center ">
+                      <!-- <span class="badge text-bg-warning">JavaScript</span>
+                      <span class="badge text-bg-success">React</span> -->
+                      <h5 class="card-title">Trainee</h5>
+                      <p class="card-text">Aplica descuento.</p>
+                      <h5 class="card-title">50%</h5>
+                      <p class="card-text">*Presentar documentacion.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card border-warning " data-aos="zoom-in-down" data-aos-anchor-placement="center-center">
+                    <!-- <img src="Imagenes/bill1.jpg" class="card-img-top" alt="..."> -->
+                    <div class="card-body text-center">
+                      <!-- <span class="badge text-bg-warning">JavaScript</span>
+                      <span class="badge text-bg-success">React</span> -->
+                      <h5 class="card-title">Junior</h5>
+                      <p class="card-text">Aplica descuento.</p>
+                      <h5 class="card-title">15%</h5>
+                      <p class="card-text">*Presentar documentacion.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
           </div>
-          <div class="modal-footer bg-dark p-2 text-white bg-opacity-75">
-            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cerrar Aviso</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          <div class="modal-body">
+            <h6 class="text-center ">VENTA</h6>
+            <H4 class="text-center">VALOR DEL TICKET $200</H4>
+            <!-- ==================================Formulario========================================================       --><!-- ==================================EDITANDO========================================================       -->
+            <div class="mx-auto   ">
+              <div class="container">
+                <div class=" row justify-content-center  ">
+                  <!--Nombre y Apellido-->
+                  <div class=" col-md-5 ">
+                    <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
+                  </div>
+                  <div class=" col-md-5 ">
+                    <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+                  </div>
+                  <div class="my-3 col-sm-10 ">
+                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                      placeholder="nombre@tucorreo.com">
+                  </div>
+                  <!-- <div class="col"></div> -->
+                  <!-- <div class=" row justify-content-center  "> -->
+                    <div class=" col-md-5 ">
+                      <input type="text" class="form-control" placeholder="Cantidad" aria-label="Cantidad">
+                    </div>
+                    <div class=" col-md-5 ">
+                      <select id="inputState" class="form-select">
+                        <option selected>Descuento...</option>
+                        <option>Estudiante</option>
+                        <option>Trainee</option>
+                        <option>Junior</option>
+                      </select>
+                    </div>
+                  <!-- </div> -->
+                  <div class="col-md-10 mt-3">
+                    <input class="form-control bg-info-subtle" type="text" value="Total a pagar: $..."
+                      aria-label="readonly input example" readonly>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="modal-footer  justify-content-center">
+            <button type="button" class="btn btn-success col-md-3" data-bs-dismiss="modal">Resumen</button>
+            <button type="button" class="btn btn-success col-md-3">Confirmar</button>
           </div>
         </div>
       </div>
     </div>
-    <!--Carousel-->
+    <!--=====================================Carousel=====================================================-->
     <section id="presentacion">
       <div id="carouselExampleCaptions" class="carousel slide mt-5">
         <!--le doy un mt-5 para que no se meta atras del navbar-->
@@ -104,7 +183,7 @@
                     Orador</a>
                   <!-- <a class=" col m-1 btn btn-success btn-sm" href="#error_venta_ticket">Comprar Tickets</a> -->
                   <a class="col m-1 btn btn-success btn-sm" data-bs-toggle="modal"
-                    data-bs-target="#error_venta_ticket">Comprar Tickets</a>
+                    data-bs-target="#venta_tickets">Comprar Tickets</a>
                 </div>
               </div>
             </div>
@@ -284,7 +363,7 @@
           <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Prensa</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacidad</a></li>
         </ul>
-        <p class="text-center text-muted">©2023-Codo a Codo   |  Desarrollado por GPiancat  </p>
+        <p class="text-center text-muted">©2023-Codo a Codo | Desarrollado por GPiancat </p>
       </footer>
     </div>
   </footer>
