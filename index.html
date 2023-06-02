@@ -51,22 +51,18 @@
       </div>
     </nav>
 
-    <!-- ================================Venta de tickets======================================================= -->
+    <!-- ================================Venta de tickets=============================================== -->
     <!-- Modal -->
     <div class="modal fade" id="venta_tickets" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
       aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
+      <div class="modal-dialog modal-lg ">
         <div class="modal-content">
           <div class="modal-header">
-            <!-- <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1> -->
             <div class="row container justify-content-center ms-0 py-0 ">
               <div class=" row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                <div class="col">
+                <div class="col mt-0">
                   <div class="card border-primary " data-aos="zoom-in-down" data-aos-anchor-placement="center-center">
-                    <!-- <img src="Imagenes/steve1.jpg" class="card-img-top  " alt="..."> -->
                     <div class="card-body text-center ">
-                      <!-- <span class="badge text-bg-warning">JavaScript</span>
-                      <span class="badge text-bg-success">React</span> -->
                       <h5 class="card-title">Estudiante</h5>
                       <p class="card-text">Aplica descuento.</p>
                       <h5 class="card-title">80%</h5>
@@ -74,12 +70,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="col">
+                <div class="col mt-0">
                   <div class="card border-success " data-aos="zoom-in-down" data-aos-anchor-placement="center-center">
-                    <!-- <img src="Imagenes/bill1.jpg" class="card-img-top" alt="..."> -->
                     <div class="card-body text-center ">
-                      <!-- <span class="badge text-bg-warning">JavaScript</span>
-                      <span class="badge text-bg-success">React</span> -->
                       <h5 class="card-title">Trainee</h5>
                       <p class="card-text">Aplica descuento.</p>
                       <h5 class="card-title">50%</h5>
@@ -87,12 +80,10 @@
                     </div>
                   </div>
                 </div>
-                <div class="col">
+                <div class="col mt-0">
                   <div class="card border-warning " data-aos="zoom-in-down" data-aos-anchor-placement="center-center">
-                    <!-- <img src="Imagenes/bill1.jpg" class="card-img-top" alt="..."> -->
+
                     <div class="card-body text-center">
-                      <!-- <span class="badge text-bg-warning">JavaScript</span>
-                      <span class="badge text-bg-success">React</span> -->
                       <h5 class="card-title">Junior</h5>
                       <p class="card-text">Aplica descuento.</p>
                       <h5 class="card-title">15%</h5>
@@ -102,58 +93,94 @@
                 </div>
               </div>
             </div>
-            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
           </div>
           <div class="modal-body">
             <h6 class="text-center ">VENTA</h6>
             <H4 class="text-center">VALOR DEL TICKET $200</H4>
-            <!-- ==================================Formulario========================================================       --><!-- ==================================EDITANDO========================================================       -->
-            <div class="mx-auto   ">
-              <div class="container">
-                <div class=" row justify-content-center  ">
-                  <!--Nombre y Apellido-->
-                  <div class=" col-md-5 ">
-                    <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
-                  </div>
-                  <div class=" col-md-5 ">
-                    <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
-                  </div>
-                  <div class="my-3 col-sm-10 ">
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                      placeholder="nombre@tucorreo.com">
-                  </div>
-                  <!-- <div class="col"></div> -->
-                  <!-- <div class=" row justify-content-center  "> -->
-                    <div class=" col-md-5 ">
-                      <input type="text" class="form-control" placeholder="Cantidad" aria-label="Cantidad">
+            <!-- =============Formulario modal==========================-->
+            <form action="" class="formulario" id="formulario_modal">
+              <div class="mx-auto   ">
+                <div class="container">
+                  <div class=" row justify-content-center  ">
+
+                    <div id="grupo_apellido" class=" col-md-5 mb-3 ">
+                      <div>
+                        <input id="apellido" name="apellido" value="" type="text" class="form-control " required
+                          placeholder="Apellido" aria-label="Apellido">
+                      </div>
+                      <p class="mb-0 p-1 d-none msjError alert alert-danger ">El Apellido es requerido. No ingrese
+                        números ni caracteres especiales.</p>
                     </div>
-                    <div class=" col-md-5 ">
-                      <select id="inputState" class="form-select">
-                        <option selected>Descuento...</option>
+                    <div id="grupo_nombre" class=" col-md-5 mb-3">
+                      <div>
+                        <input id="nombre" name="nombre" type="text" class="form-control" placeholder="Nombre"
+                          aria-label="Nombre" required>
+                      </div>
+                      <p class="mb-0 p-1 d-none msjError alert alert-danger">El Nombre es requerido. No ingrese números
+                        ni caracteres especiales.</p>
+                    </div>
+                    <div id="grupo_mail" class="my-3 col-sm-10 ">
+                      <div>
+                        <input type="email" class="form-control" id="mail" name="mail" placeholder="nombre@tucorreo.com"
+                          required>
+                      </div>
+                      <p class="mb-0 p-1 d-none msjError alert alert-danger">El formato de correo válido es de el tipo
+                        "nombre@servidor.com.ar".</p>
+                    </div>
+                    <div id="grupo_cantidad" class=" col-md-5 mb-3">
+                      <label for="cantidad" class="form-label">Elija sus tickets</label>
+                      <input id="cantidad" name="cantidad" type="number" class="form-control" min="0" max="5"
+                        placeholder="0" aria-label="Cantidad" required>
+                    </div>
+                    <p class="mb-0 p-1 d-none msjError alert alert-danger">Esta ingresando una cantidad erronea.</p>
+                    <div id="grupo_descuento" class=" col-md-5 mb-3">
+                      <label for="descuento" class="form-label">Tipo de Entradas</label>
+                      <select id="descuento" name="descuento" class="form-select">
+                        <option selected>Entrada gral</option>
                         <option>Estudiante</option>
                         <option>Trainee</option>
                         <option>Junior</option>
                       </select>
                     </div>
-                  <!-- </div> -->
-                  <div class="col-md-10 mt-3">
-                    <input class="form-control bg-info-subtle" type="text" value="Total a pagar: $..."
-                      aria-label="readonly input example" readonly>
+                    <!-- </div> -->
+                    <div id="grupo_saldo" class="col-md-10 mt-3">
+                      <input id="saldo" name="saldo" class="form-control bg-info-subtle" type="text"
+                        value="Total a pagar: $..." aria-label="readonly input example" readonly>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </form>
 
 
           </div>
           <div class="modal-footer  justify-content-center">
-            
-            <button type="button" class="btn btn-success col-md-3">Resumen</button>
-            <button type="button" class="btn btn-success col-md-3" data-bs-dismiss="modal">Confirmar</button>
+            <button class="btn btn-success disabled col-md-3" data-bs-target="#ventaConfirmada" data-bs-toggle="modal">Confirmar compra</button>
+            <!-- <button id="btn_resumen" type="button" class="btn btn-success col-md-3">Confirmar</button> -->
+            <button id="btn_confirmar" type="button" class="btn btn-success col-md-3"
+              data-bs-dismiss="modal">Salir</button>
           </div>
         </div>
       </div>
     </div>
+    <!-- =================================Sub Modal (confirmacion de venta)==================================== -->
+    <div class="modal fade" id="ventaConfirmada" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="tituloVentaConfirmada">Confirmacion de compra</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Gracias por tu compra. Te vamos a enviar toda la información adicional de las charlas a tu casilla de correo
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success" data-bs-target="#venta_tickets" data-bs-toggle="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!--=====================================Carousel=====================================================-->
     <section id="presentacion">
       <div id="carouselExampleCaptions" class="carousel slide mt-5">
@@ -332,10 +359,10 @@
         <div class="container">
           <div class=" row justify-content-center ">
             <!--Nombre y Apellido-->
-            <div class=" col-md-4 ">
+            <div class=" col-md-4 mt-3">
               <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
             </div>
-            <div class=" col-md-4 ">
+            <div class=" col-md-4 mt-3">
               <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
             </div>
             <!--Comentarios-->
@@ -364,15 +391,17 @@
           <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Prensa</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacidad</a></li>
         </ul>
-        <p class="text-center text-muted">©2023-Codo a Codo | Desarrollado por GPiancat </p>
+        <p class="text-center text-muted mb-0">©2023-Codo a Codo | Desarrollado por GPiancat </p>
       </footer>
     </div>
   </footer>
   <script src="JS/bootstrap.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="JS/scripts.js"></script>
   <script>
     AOS.init();
   </script>
+  <script src="https://kit.fontawesome.com/e00f6cd130.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -8,3 +8,9 @@ html {
     .title {
         font-size: calc(1.525rem + 0.3vw);
       }
+.error_validacion{
+  color: rgb(240, 10, 10);
+}
+.ok_validacion{
+  color: greenyellow;
+}
