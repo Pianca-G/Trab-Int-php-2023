@@ -51,20 +51,22 @@ function CostoTickets() {
      //console.log(document.querySelector('#descuento').value)
     switch (document.querySelector('#descuento').value) {
         case "Entrada gral":
-            descuento=1
+            descuento=0
             break;
         case "Estudiante":
-            descuento=1.8
+            descuento=0.8
             break;
         case "Trainee":
-            descuento=1.50
+            descuento=0.50
             break;
         case "Junior":
-            descuento=1.15
+            descuento=0.15
             break;
     }
     console.log (descuento);
-   precioVenta= document.querySelector('#cantidad').value * precioUnitario / descuento ;
+    console.log(precioVenta)
+   precioVenta= document.querySelector('#cantidad').value * precioUnitario;
+   precioVenta= precioVenta- (precioVenta * descuento)
    precioVenta= precioVenta.toFixed(2)
    document.querySelector('#saldo').value=("Total a pagar: $ " + precioVenta);
    //Multiplico por el residuo del descuento 
