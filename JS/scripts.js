@@ -2,7 +2,7 @@ console.log(document.getElementById("descuento").value);
 //===============Declaracion de variables===================
 const formulario_modal = document.getElementById("formulario_modal");
 const inputs = document.querySelectorAll("#formulario_modal input");
-const btn_resumen = document.getElementById("btn_resumen");
+const btn_confirmar = document.getElementById("btn_confirmar");
 let precioVenta =0;
 let precioUnitario=200;
 let descuento =0;
@@ -16,7 +16,12 @@ const expresiones = {
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 }
 
-
+const datos ={
+    nombre: false,
+    apellido: false,
+    mail: false,
+    cantidad: false
+}
 //==================Eventos Listener========================
 //  btn_resumen.addEventListener("click",valido_todo ) //valida los ingresos de los inputs y la suma con los descuentos
 inputs.forEach((input) => {
@@ -29,7 +34,6 @@ document.getElementById("descuento").addEventListener('click', CostoTickets);
 //=====================Funciones============================
 // VALIDAMOS LOS INPUTS
 function valido_txt(e) {
-    
     switch (e.target.name) {
         case "nombre":
             validarCampo(expresiones.nombre, e.target, "nombre");
@@ -41,10 +45,20 @@ function valido_txt(e) {
             validarCampo(expresiones.correo, e.target, "mail");
             break;
         case "cantidad":
-            
             validoCantTkts();
             CostoTickets();
             break;
+    }
+     
+    if (datos.nombre && datos.apellido && datos.mail &&datos.cantidad){
+        //habilito el boton de confirmacion
+        btn_confirmar.classList.remove("disabled");
+        btn_confirmar.classList.add("enabled");
+        // console.log(datos);
+    }else{
+        //desabilito el boton de confirmacion
+        btn_confirmar.classList.remove("enabled");
+        btn_confirmar.classList.add("disabled");
     }
 }
 function CostoTickets() {
@@ -63,8 +77,7 @@ function CostoTickets() {
             descuento=0.15
             break;
     }
-    console.log (descuento);
-    console.log(precioVenta)
+    
    precioVenta= document.querySelector('#cantidad').value * precioUnitario;
    precioVenta= precioVenta- (precioVenta * descuento)
    precioVenta= precioVenta.toFixed(2)
@@ -75,6 +88,9 @@ function validoCantTkts() {
     if (document.querySelector('#cantidad').value < 0 || document.querySelector('#cantidad').value > 5) {
         document.querySelector('#cantidad').value = 0
         document.querySelector('#cantidad').onFocus = document.querySelector('#cantidad')
+        datos.cantidad=false;
+    }else{
+        datos.cantidad=true;
     }
 }
 
@@ -83,12 +99,12 @@ const validarCampo = (expresion, input, campo) => {
         document.querySelector(`#${campo}`).classList.add("is-valid");
         document.querySelector(`#${campo}`).classList.remove("is-invalid");
         document.querySelector(`#grupo_${campo} .msjError`).classList.add("d-none");
-        // campos[campo] = true ;
+        datos[campo] = true ;
     } else {
         document.querySelector(`#${campo}`).classList.add("is-invalid");
         document.querySelector(`#${campo}`).classList.remove("is-valid");
         document.querySelector(`#grupo_${campo} .msjError`).classList.remove("d-none");
-        // campos[campo] = false ;
+        datos[campo] = false ;
     }
 }
 
