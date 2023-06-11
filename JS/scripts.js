@@ -3,6 +3,7 @@ console.log(document.getElementById("descuento").value);
 const formulario_modal = document.getElementById("formulario_modal");
 const inputs = document.querySelectorAll("#formulario_modal input");
 const btn_confirmar = document.getElementById("btn_confirmar");
+const btn_salir = document.getElementById("btn_salir");
 let precioVenta =0;
 let precioUnitario=200;
 let descuento =0;
@@ -31,6 +32,16 @@ inputs.forEach((input) => {
 })
 document.getElementById("descuento").addEventListener('keyup', CostoTickets);
 document.getElementById("descuento").addEventListener('click', CostoTickets);
+ btn_confirmar.addEventListener("click",function(e){
+    e.preventDefault();
+    // console.log( document.querySelector('#msj_sub_modal'))
+    // alert("Gracias por tu compra. Te vamos a enviar toda la información adicional de las charlas a tu casilla de correo.");
+    limpio_pant();
+ });
+ btn_salir.addEventListener("click", function(e){
+    e.preventDefault
+    limpio_pant();
+ } )
 //=====================Funciones============================
 // VALIDAMOS LOS INPUTS
 function valido_txt(e) {
@@ -107,4 +118,25 @@ const validarCampo = (expresion, input, campo) => {
         datos[campo] = false ;
     }
 }
-
+function limpio_pant(){    
+    formulario_modal.reset();
+    // Tengo que desactivar los iconos de input valido-invalido
+     document.querySelectorAll(".is-valid").forEach((icono)=>{
+         icono.classList.remove("is-valid");
+     });
+     document.querySelectorAll(".is-invalid").forEach((icono)=>{
+         icono.classList.remove("is-invalid");
+     });
+     //desabilito el btn confirmar
+     btn_confirmar.classList.remove("enabled");
+     btn_confirmar.classList.add("disabled");
+     // Tengo que resetear los campos de validacion del boton confirmar
+     datos.nombre = false;
+     datos.apellido = false;
+     datos.correo = false;
+     datos.cantidad = false;  
+     // Borro todos los mensajes de error
+     document.querySelectorAll(".msjError").forEach((icono)=>{
+        icono.classList.add("d-none"); 
+    });   
+}
